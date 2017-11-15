@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Piece.destroy_all
+
+50.times do |index|
+  Piece.create!(title: Faker::ChuckNorris.fact,
+                artist: Faker::Name.unique.name,
+                created: Faker::Date.birthday(18, 65),
+                image: Faker::LoremPixel.image    )
+end
+
+p "Created #{Piece.count} pieces"

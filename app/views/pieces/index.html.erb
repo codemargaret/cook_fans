@@ -1,0 +1,7 @@
+<h1>Brian Cook Official Fan Club</h1>
+
+<ul>
+  <% @pieces.each do |piece| %>
+    <li><img src="<%= piece.image%>"> <br><%= piece.title%><br> <%= piece.artist%></li>
+  <% end %>
+</ul>

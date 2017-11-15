@@ -1,7 +1,7 @@
 class Piece < ActiveRecord::Base
-  belongs_to :user
-  has_many :reviews
-  has_many :ratings
+  # belongs_to :user
+  # has_many :reviews
+  # has_many :ratings
 
   validates :title, :presence => true
   validates :artist, :presence => true
