@@ -9,6 +9,7 @@ class PiecesController < ApplicationController
 
   def new
     @piece = Piece.new
+
   end
 
   def create
@@ -18,5 +19,10 @@ class PiecesController < ApplicationController
     else
       render :new
     end
+  end
+
+private
+  def piece_params
+    params.require(:piece).permit(:title, :artist, :created, :image, :genre)
   end
 end

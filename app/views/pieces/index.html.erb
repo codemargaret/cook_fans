@@ -2,6 +2,6 @@
 
 <ul>
   <% @pieces.each do |piece| %>
-    <li><img src="<%= piece.image%>"> <br><%= piece.title%><br> <%= piece.artist%></li>
+    <li><img src="<%= piece.image%>"> <br><%= piece.title%><br> <%= piece.artist%> <%= piece.user_id%></li>
   <% end %>
 </ul>
