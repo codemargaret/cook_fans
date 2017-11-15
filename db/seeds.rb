@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Piece.destroy_all
 
-50.times do |index|
+10.times do |index|
   Piece.create!(title: Faker::ChuckNorris.fact,
                 artist: Faker::Name.unique.name,
                 created: Faker::Date.birthday(18, 65),
