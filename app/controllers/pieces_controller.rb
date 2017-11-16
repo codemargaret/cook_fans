@@ -5,6 +5,7 @@ class PiecesController < ApplicationController
 
   def show
     @piece = Piece.find(params[:id])
+    @user = @piece.user
   end
 
   def new
@@ -23,6 +24,22 @@ class PiecesController < ApplicationController
       redirect_to user_path(@user)
     else
       render :new
+    end
+  end
+
+  def edit
+
+    @piece = Piece.find(params[:id])
+    @user = @piece.user
+  end
+
+  def update
+    @piece = Piece.find(params[:id])
+    @user = @piece.user
+    if @piece.update(piece_params)
+      redirect_to user_piece_path(@user, @piece)
+    else
+      render :edit
     end
   end
 
