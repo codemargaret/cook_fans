@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @pieces = Piece.all
+    @pieces = @user.pieces
   end
 
   def new

@@ -1,5 +1,7 @@
 <h1>Brian Cook Official Fan Club</h1>
 
+<p>Click <%= link_to "here", users_path %> to post a review or rating</p>
+
 <ul>
   <% @pieces.each do |piece| %>
     <li><img src="<%= piece.image%>"> <br><%= piece.title%><br> <%= piece.artist%> <%= piece.user_id%></li>

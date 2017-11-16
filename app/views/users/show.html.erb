@@ -1,0 +1,16 @@
+<h1><%= @user.name %></h1>
+
+
+<ul>
+  <% if @pieces.any? %>
+    <% @pieces.each do |piece| %>
+      <li><%= link_to piece.title, piece_path(piece) %></li>
+    <% end %>
+    <% else %>
+      <h2><%= @user.name %> has not posted any pieces yet.</h2>
+    <% end %>
+</ul>
+
+<h1>(reviews and ratings will go in this zone)</h1>
+
+<h1><%= link_to "add a piece", new_user_piece_path(@user.id) %></h1>

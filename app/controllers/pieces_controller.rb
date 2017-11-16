@@ -8,14 +8,19 @@ class PiecesController < ApplicationController
   end
 
   def new
-    @piece = Piece.new
+    @user = User.find(params[:user_id])
+    @piece = @user.pieces.new
 
+    # redirect_to new_user_piece_path(@user_id)
   end
 
   def create
-    @piece = Piece.new(piece_params)
+    # binding.pry
+    @user = User.find(params[:user_id])
+    @piece = @user.pieces.new(piece_params)
+
     if @piece.save
-      redirect_to pieces_path
+      redirect_to user_path(@user)
     else
       render :new
     end
@@ -23,6 +28,6 @@ class PiecesController < ApplicationController
 
 private
   def piece_params
-    params.require(:piece).permit(:title, :artist, :created, :image, :genre)
+    params.require(:piece).permit(:title, :artist, :created, :image, :genre, :user_id)
   end
 end
