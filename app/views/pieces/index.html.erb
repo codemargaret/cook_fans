@@ -2,8 +2,16 @@
 
 <p>Click <%= link_to "here", users_path %> to post a review or rating</p>
 
-<ul>
+<ul style="list-style-type:none">
   <% @pieces.each do |piece| %>
-    <li><img src="<%= piece.image%>"> <br><%= piece.title%><br> <%= piece.artist%> <%= piece.user_id%></li>
+    <li>
+      <img src="<%= piece.image%>">
+      <br>
+      <b>Title:</b> <%= piece.title%>
+      <br>
+      <b>Artist:</b> <%= piece.artist%>
+      <br>
+      <b>Posted by User number:</b> <%= piece.user_id%>
+    </li>
   <% end %>
 </ul>

@@ -7,4 +7,6 @@ class Piece < ActiveRecord::Base
   validates :artist, :presence => true
   validates :created, :presence => true
   validates :image, :presence => true
+
+  default_scope {order(title: :asc)}
 end
