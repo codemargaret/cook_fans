@@ -8,5 +8,7 @@ class Piece < ActiveRecord::Base
   validates :created, :presence => true
   validates :image, :presence => true
 
-  default_scope {order(title: :asc)}
+  scope :sort_alpha, -> {order(title: :asc)}
+
+
 end

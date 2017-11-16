@@ -2,6 +2,14 @@
 
 <p>Click <%= link_to "here", users_path %> to post a review or rating</p>
 
+<!-- <%= link_to "Sort Alphabeically", pieces_path(:sort => "alpha") %> -->
+
+<!-- <%= link_to "Sort Alphabeically", pieces_path %> -->
+
+<a href="?sort=alpha"><button>Sort by Date Alpha</button></a>
+
+<button type="button" name="button">Sort by Date Work Was Created</button>
+
 <ul style="list-style-type:none">
   <% @pieces.each do |piece| %>
     <li>

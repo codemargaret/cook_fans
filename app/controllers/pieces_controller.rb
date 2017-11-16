@@ -1,6 +1,12 @@
 class PiecesController < ApplicationController
   def index
     @pieces = Piece.all
+
+    if params[:sort] == "alpha"
+      @pieces = Piece.sort_alpha
+    else
+      @pieces = Piece.all
+    end
   end
 
   def show
