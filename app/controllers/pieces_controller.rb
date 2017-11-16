@@ -28,7 +28,6 @@ class PiecesController < ApplicationController
   end
 
   def edit
-
     @piece = Piece.find(params[:id])
     @user = @piece.user
   end
@@ -41,6 +40,13 @@ class PiecesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @piece = Piece.find(params[:id])
+    @user = @piece.user
+    @piece.destroy
+    redirect_to user_path(@user)
   end
 
 private

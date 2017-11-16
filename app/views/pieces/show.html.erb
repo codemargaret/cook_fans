@@ -1,3 +1,8 @@
 <h1><%= @piece.title %></h1>
 <img src="<%= @piece.image %>">
 <%= link_to "Edit Details", edit_user_piece_path(@user, @piece) %>
+
+<button type="button" name="button">
+<%= link_to "Delete this Piece", piece_path(@piece),
+                  :data => {:confirm => "Are you sure?",
+                  :method => "delete"} %></button>
