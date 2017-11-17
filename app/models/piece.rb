@@ -9,6 +9,6 @@ class Piece < ActiveRecord::Base
   validates :image, :presence => true
 
   scope :sort_alpha, -> {order(title: :asc)}
-
+  scope :sort_date, -> {order(created_at: :desc).limit(10)}
 
 end

@@ -1,9 +1,10 @@
 class PiecesController < ApplicationController
   def index
     @pieces = Piece.all
-
     if params[:sort] == "alpha"
       @pieces = Piece.sort_alpha
+    elsif params[:sort] == "date"
+        @pieces = Piece.sort_date
     else
       @pieces = Piece.all
     end

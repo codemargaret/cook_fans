@@ -6,9 +6,9 @@
 
 <!-- <%= link_to "Sort Alphabeically", pieces_path %> -->
 
-<a href="?sort=alpha"><button>Sort by Date Alpha</button></a>
+<a href="?sort=alpha"><button class="btn">Sort Alphabetically</button></a>
 
-<button type="button" name="button">Sort by Date Work Was Created</button>
+<a href="?sort=date"><button class="btn">Sort by Date Work Was Created</button></a>
 
 <ul style="list-style-type:none">
   <% @pieces.each do |piece| %>
